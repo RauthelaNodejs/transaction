@@ -1,0 +1,466 @@
+
+
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "task",
+      "description": "Api documention with node js  ",
+      "contact": {
+        "email": ""
+      },
+      "version": "1.0.0"
+     
+    },
+    "basePath": "/",
+    
+    "schemes": [
+      "http",
+      "https"
+    ],
+    "consumes": [
+      "application/x-www-form-urlencoded"
+     
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+     "/task": {
+        "post": {
+          "deprecated": false,
+          "tags": [
+            "Task"
+          ],
+          "description": "create task ",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "accessToken",
+              "in": "header",
+              "description": "please enter accessToken",
+              "required": true,
+              "type": "string"
+          },
+            {
+              "name": "title",
+              "in": "formData",
+              "description": "please enter title",
+              "required": true,
+              "type": "string"
+          },
+          {
+            "name": "description",
+            "in": "formData",
+            "description": "please enter description",
+            "required": true,
+            "type": "string"
+        },
+         {
+            "name": "status",
+            "in": "formData",
+            "description": "please enter status 1 for pending 2 for progress 3 for completed",
+            "required": true,
+            "type": "number"
+        }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successfully"
+            },
+            "401": {
+              "description": "Unauthorized"
+            }
+          },
+           "security": [
+            {
+              "basicAuth": [
+                "Username: ",
+                "Password: "
+              ]
+            }
+          ]
+        },
+        "get": {
+          "deprecated": false,
+          "tags": [
+            "Task"
+          ],
+          "description": "get all Tasks",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "accessToken",
+              "in": "header",
+              "description": "please enter accessToken",
+              "required": true,
+              "type": "string"
+          }
+          
+          ],
+          "responses": {
+            "200": {
+              "description": "Successfully"
+            },
+            "401": {
+              "description": "Unauthorized"
+            }
+          },
+           "security": [
+            {
+              "basicAuth": [
+                "Username: ",
+                "Password: "
+              ]
+            }
+          ]
+        },
+        "put": {
+          "deprecated": false,
+          "tags": [
+            "Task"
+          ],
+          "description": "update task by Id",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "accessToken",
+              "in": "header",
+              "description": "please enter accessToken",
+              "required": true,
+              "type": "string"
+          },
+            {
+                "name": "taskId",
+                "in": "formData",
+                "description": "please enter taskId",
+                "required": true,
+                "type": "string"
+            },
+            {
+                "name": "title",
+                "in": "formData",
+                "description": "please enter task name",
+                "required": false,
+                "type": "string"
+            },
+            {
+              "name": "description",
+              "in": "formData",
+              "description": "please enter description",
+              "required": false,
+              "type": "string"
+          },
+          {
+            "name": "status",
+            "in": "formData",
+            "description": "please enter status 1 for pending 2 for progress 3 for completed",
+            "required": false,
+            "type": "number"
+        }
+
+          
+          ],
+          "responses": {
+            "200": {
+              "description": "Successfully"
+            },
+            "401": {
+              "description": "Unauthorized"
+            }
+          },
+           "security": [
+            {
+              "basicAuth": [
+                "Username: ",
+                "Password: "
+              ]
+            }
+          ]
+        },
+        "delete": {
+          "deprecated": false,
+          "tags": [
+            "Task"
+          ],
+          "description": "delete task by Id",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "accessToken",
+              "in": "header",
+              "description": "please enter accessToken",
+              "required": true,
+              "type": "string"
+          },
+            {
+                "name": "taskId",
+                "in": "formData",
+                "description": "please enter taskId",
+                "required": true,
+                "type": "string"
+            }            
+          
+          ],
+          "responses": {
+            "200": {
+              "description": "Successfully"
+            },
+            "401": {
+              "description": "Unauthorized"
+            }
+          },
+           "security": [
+            {
+              "basicAuth": [
+                "Username: ",
+                "Password: "
+              ]
+            }
+          ]
+        }
+    },
+    
+    "/task/byId": {
+        "get": {
+          "deprecated": false,
+          "tags": [
+            "Task"
+          ],
+          "description": "get all Tasks",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "accessToken",
+              "in": "header",
+              "description": "please enter accessToken",
+              "required": true,
+              "type": "string"
+          },
+            {
+                "name": "taskId",
+                "in": "query",
+                "description": "please enter taskId",
+                "required": true,
+                "type": "string"
+            }            
+          
+          ],
+          "responses": {
+            "200": {
+              "description": "Successfully"
+            },
+            "401": {
+              "description": "Unauthorized"
+            }
+          },
+           "security": [
+            {
+              "basicAuth": [
+                "Username: ",
+                "Password: "
+              ]
+            }
+          ]
+        }
+    },
+  
+    "/user/signUp": {
+      "post": {
+        "deprecated": false,
+        "tags": [
+          "User"
+        ],
+        "description": "signUp user",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "formData",
+            "description": "please enter email",
+            "required": true,
+            "type": "string"
+        },
+        {
+          "name": "password",
+          "in": "formData",
+          "description": "please enter password",
+          "required": true,
+          "type": "string"
+        }      ,
+        {
+          "name": "name",
+          "in": "formData",
+          "description": "please enter name",
+          "required": true,
+          "type": "string"
+      },
+      {
+        "name": "address",
+        "in": "formData",
+        "description": "please enter address",
+        "required": true,
+        "type": "string"
+      }   ,
+      {
+        "name": "phone",
+        "in": "formData",
+        "description": "please enter phone",
+        "required": true,
+        "type": "number"
+      }       
+        
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+         "security": [
+          {
+            "basicAuth": [
+              "Username: ",
+              "Password: "
+            ]
+          }
+        ]
+      }
+  },
+    "/user/login": {
+      "post": {
+        "deprecated": false,
+        "tags": [
+          "User"
+        ],
+        "description": "login user",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+         
+          {
+            "name": "email",
+            "in": "formData",
+            "description": "please enter email",
+            "required": true,
+            "type": "string"
+        },
+        {
+          "name": "password",
+          "in": "formData",
+          "description": "please enter password",
+          "required": true,
+          "type": "string"
+      }      
+        
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+         "security": [
+          {
+            "basicAuth": [
+              "Username: ",
+              "Password: "
+            ]
+          }
+        ]
+      }
+  },
+  "/user/UpdateAddress": {
+    "put": {
+      "deprecated": false,
+      "tags": [
+        "User"
+      ],
+      "description": "signUp user",
+      "consumes": [
+        "application/x-www-form-urlencoded"
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "parameters": [
+        {
+          "name": "accessToken",
+          "in": "header",
+          "description": "please enter accessToken",
+          "required": true,
+          "type": "string"
+      },
+    {
+      
+      "name": "address",
+      "in": "formData",
+      "description": "please enter address",
+      "required": true,
+      "type": "string"
+    }   
+      
+      ],
+      "responses": {
+        "200": {
+          "description": "Successfully"
+        },
+        "401": {
+          "description": "Unauthorized"
+        }
+      },
+       "security": [
+        {
+          "basicAuth": [
+            "Username: ",
+            "Password: "
+          ]
+        }
+      ]
+    }
+}
+  },
+    "securityDefinitions": {
+      "basicAuth": {
+        "type": "basic"
+      }
+    }
+  }
+  
